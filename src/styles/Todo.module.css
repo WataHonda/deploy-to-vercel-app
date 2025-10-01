@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+.todoAppContainer {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--background);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-bottom: 1rem;
+  background-color: var(--background);
+  color: var(--foreground);
+  border-color: rgba(128, 128, 128, 0.3);
+}
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  background-color: #2563eb;
+  color: white;
+}
+.button:hover {
+  background-color: #1d4ed8;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.filterButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+.filterButton {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid;
+  cursor: pointer;
+  background-color: transparent;
+  border-color: rgba(128, 128, 128, 0.3);
+  color: var(--foreground);
+}
+.filterButton.active {
+  background-color: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+.todoList {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid;
+  border-color: rgba(128, 128, 128, 0.1);
+  transition: background-color 0.2s;
+  cursor: grab;
+}
+.todoItem:active {
+  cursor: grabbing;
+  background-color: rgba(128, 128, 128, 0.1);
+}
+.todoItem.completed .todoText {
+  text-decoration: line-through;
+  color: #888;
+}
+.checkbox {
+  margin-right: 1rem;
+  width: 20px;
+  height: 20px;
+}
+.todoText {
+  flex-grow: 1;
+}
+.deleteButton {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.deleteButton:hover {
+  background-color: #b91c1c;
+}
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .todoAppContainer {
+    border-color: rgba(128, 128, 128, 0.4);
+  }
+  .input,
+  .loginInput {
+    border-color: rgba(128, 128, 128, 0.5);
+  }
+  .filterButton {
+    border-color: rgba(128, 128, 128, 0.5);
+  }
+  .todoItem {
+    border-color: rgba(128, 128, 128, 0.2);
+  }
+  .todoItem:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .todoItem.completed .todoText {
+    color: #666;
+  }
+}
