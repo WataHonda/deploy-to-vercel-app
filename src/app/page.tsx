@@ -120,7 +120,7 @@ export default function Home() {
   return (
     <main className={styles.container}>
       <div className={styles.todoAppContainer}>
-        <h1 className={styles.title}>TODOリスト</h1>
+        <h1 className={styles.title}>Vercelデプロイ演習</h1>
         <div className="flex gap-2 mb-4">
           <input
             type="text"
